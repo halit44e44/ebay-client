@@ -1,0 +1,21 @@
+{
+    "name": "halit44e44/ebay-client",
+    "description": "Ebay Client",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Halit",
+            "email": "halit44e44@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ConnectProf\\App\\Model\\Ebay\\": "src"
+        }
+    }
+}
