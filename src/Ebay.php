@@ -45,10 +45,12 @@ class Ebay implements Constants
     private function setInformation(string $grantType, string $code, string $token, string $refreshToken, int $expireIn)
     {
         $this->information['grantType'] = $grantType;
+        if (!empty($code)) {
+            $this->information['code'] = $code;
+        }
 
         if (!empty($token)) {
             $this->information['loginRequired'] = false;
-            $this->information['code'] = $code;
             $this->information['token'] = $token;
             $this->information['refreshToken'] = $refreshToken;
             $this->information['expiresIn'] = $expireIn;
@@ -60,24 +62,22 @@ class Ebay implements Constants
         $request = new Request();
         $response = $request->send(self::ENDPOINTS['auth']['getAccessToken']['method'], self::ENDPOINTS['auth']['getAccessToken']['uri'], [
             'single' => false,
-            'raw' => false,
+            'raw' => true,
             'form_data' => [
                 'grant_type' => $this->information['grantType'],
                 'code' => $this->information['code'],
                 'redirect_uri' => 'O_uzcan_zdemir-Ouzcanzd-connec-amsnxgd'
+            ],
+            'header' => [
+                'Content-Type: application/x-www-form-urlencoded',
+                'Authorization: Basic T3V6Y2FuemQtY29ubmVjdHAtU0JYLTRmYTkxOTE5ZC0wYjViYWNhNDpTQlgtZmE5MTkxOWRjZDJmLWViMTEtNDFhMi1hODY4LTA3YzQ='
             ]
         ]);
 
-        //[error] => invalid_request
         $this->information['loginRequired'] = false;
-        $this->information['token'] = "r32r32";
-        $this->information['refreshToken'] = "rewrewrew";
-        $this->information['expiresIn'] = 1700;
-//
-//        $this->information['loginRequired'] = false;
-//        $this->information['token'] = $response->getObject()->access_token;
-//        $this->information['refreshToken'] = $response->getObject()->refresh_token;
-//        $this->information['expiresIn'] = $response->getObject()->expires_in;
+        $this->information['token'] = $response->getObject()->access_token;
+        $this->information['refreshToken'] = $response->getObject()->refresh_token;
+        $this->information['expiresIn'] = $response->getObject()->expires_in;
     }
 
     public function __destruct()

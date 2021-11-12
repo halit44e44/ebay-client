@@ -11,7 +11,7 @@ class Product
         $this->information = $information;
     }
 
-    public function test(): array
+    public function getInventoryItem(): array
     {
         return $this->information;
     }

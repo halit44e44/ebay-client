@@ -28,7 +28,7 @@ class Request
      * @var array $CURLOPT_HTTPHEADER
      */
     private $CURLOPT_HTTPHEADER = [
-        'Accept: application/json'
+        //'Accept: application/json'
     ];
 
     /**
@@ -140,11 +140,11 @@ class Request
         if ($this->CURLOPT_POST || $this->CURLOPT_PUT) {
             $this->options[CURLOPT_POST] = $this->CURLOPT_POST;
             if ($this->raw) {
-                $this->CURLOPT_HTTPHEADER[] = 'Content-type: application/json';
+                //$this->CURLOPT_HTTPHEADER[] = 'Content-type: application/json';
                 if ($this->single) {
-                    $this->options[CURLOPT_POSTFIELDS] = json_encode($this->CURLOPT_POSTFIELDS[0]);
+                    $this->options[CURLOPT_POSTFIELDS] = http_build_query($this->CURLOPT_POSTFIELDS[0]);
                 } else {
-                    $this->options[CURLOPT_POSTFIELDS] = json_encode($this->CURLOPT_POSTFIELDS);
+                    $this->options[CURLOPT_POSTFIELDS] = http_build_query($this->CURLOPT_POSTFIELDS);
                 }
             } else {
                 if ($this->single) {
@@ -165,13 +165,13 @@ class Request
         }
 
 
-//        if (Constants::DEBUG) {
-////            print_r($this->getHeader());
-//            print_r($this->options);
-////            print_r($this->CURLOPT_POSTFIELDS);
-//            exit;
-//        }
-
+        if (Constants::DEBUG) {
+//            print_r($this->getHeader());
+            print_r($this->options);
+//            print_r($this->CURLOPT_POSTFIELDS);
+            exit;
+        }
+//        print_r($this->options); die;
         curl_setopt_array($ct, $this->options);
         return new Response($ct);
     }
