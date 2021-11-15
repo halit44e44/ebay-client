@@ -1,2 +1,2 @@
 # ebay-client
-Ebay Client
+Ebay Client V 1.0
