@@ -74,10 +74,12 @@ class Ebay implements Constants
             ]
         ]);
 
-        $this->information['loginRequired'] = false;
-        $this->information['token'] = $response->getObject()->access_token;
-        $this->information['refreshToken'] = $response->getObject()->refresh_token;
-        $this->information['expiresIn'] = $response->getObject()->expires_in;
+        if (empty($response->getObject()->error)) {
+            $this->information['loginRequired'] = false;
+            $this->information['token'] = $response->getObject()->access_token;
+            $this->information['refreshToken'] = $response->getObject()->refresh_token;
+            $this->information['expiresIn'] = $response->getObject()->expires_in;
+        }
     }
 
     public function __destruct()

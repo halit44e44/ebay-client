@@ -7,6 +7,7 @@ interface Constants
     const DEBUG = false;
     const BASE_URL = "https://api.sandbox.ebay.com/sell/inventory/v1/";
     const LOGIN_URL = "https://api.sandbox.ebay.com/identity/v1/oauth2/token";
+    const CATEGORY_URL = "https://api.sandbox.ebay.com/commerce/taxonomy/v1/category_tree/";
 
     const ENDPOINTS = [
         'auth'=> [
@@ -25,6 +26,10 @@ interface Constants
         ],
 
         'product' => [
+            'getAllCategory' => [
+                'method' => 'GET',
+                'uri' => self::CATEGORY_URL
+            ],
             'inventoryItem' => [
                 'method' => 'GET',
                 'uri' => self::BASE_URL . 'inventory_item'
