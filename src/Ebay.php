@@ -2,16 +2,20 @@
 
 namespace ConnectProf\App\Model\Ebay;
 
+use ConnectProf\App\Model\Ebay\Features\Helper;
 use ConnectProf\App\Model\Ebay\Features\Product;
 use ConnectProf\App\Model\Ebay\Http\Request;
 
 class Ebay implements Constants
 {
+    use Helper;
 
     protected $information = [
         'loginRequired' => true,
         'grantType' => '',
         'code' => '',
+        'country' => '',
+        'marketPlaceId' => '',
         'token' => '',
         'refreshToken' => '',
         'expiresIn' => ''
@@ -22,13 +26,15 @@ class Ebay implements Constants
     /**
      * @param string $grantType
      * @param string $code
+     * @param int $country
      * @param string|null $token
      * @param string|null $refreshToken
      * @param int|null $expireIn
      */
-    public function __construct(string $grantType, string $code, string $token = '', string $refreshToken = '', int $expireIn = 0)
+    public function __construct(string $grantType, string $code, int $country, string $token = '', string $refreshToken = '', int $expireIn = 0)
     {
         $this->setInformation($grantType, $code, $token, $refreshToken, $expireIn);
+        $this->countryCode($country);
 
         if ($this->information['loginRequired']) {
             $this->getAccessToken();
