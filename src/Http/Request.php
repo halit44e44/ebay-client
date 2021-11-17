@@ -142,9 +142,9 @@ class Request
             if ($this->raw) {
                 //$this->CURLOPT_HTTPHEADER[] = 'Content-type: application/json';
                 if ($this->single) {
-                    $this->options[CURLOPT_POSTFIELDS] = http_build_query($this->CURLOPT_POSTFIELDS[0]);
-                } else {
                     $this->options[CURLOPT_POSTFIELDS] = http_build_query($this->CURLOPT_POSTFIELDS);
+                } else {
+                    $this->options[CURLOPT_POSTFIELDS] = json_encode($this->CURLOPT_POSTFIELDS);
                 }
             } else {
                 if ($this->single) {

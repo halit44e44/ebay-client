@@ -6,7 +6,7 @@ namespace ConnectProf\App\Model\Ebay\Features;
 use ConnectProf\App\Model\Ebay\Constants;
 use ConnectProf\App\Model\Ebay\Http\Request;
 
-class Product
+class Product extends ProductFactory
 {
     private $information;
     private $request;
@@ -15,6 +15,20 @@ class Product
     {
         $this->request = new Request();
         $this->information = $information;
+    }
+
+    public function createProduct(): array
+    {
+        $response = $this->request->send(Constants::ENDPOINTS['product']['bulkCreateOrReplaceInventoryItem']['method'], Constants::ENDPOINTS['product']['bulkCreateOrReplaceInventoryItem']['uri'], [
+            'raw' => true,
+            'form_data' => $this->getProductModel(),
+            'header' => [
+                'Authorization:Bearer ' . $this->information['token'],
+                'Content-Language:' . $this->information['country'],
+                'X-EBAY-C-MARKETPLACE-ID:' . $this->information['marketPlaceId']
+            ]
+        ]);
+        return $response->getArray();
     }
 
     public function getAllCategories(int $country): array

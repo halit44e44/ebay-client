@@ -2,8 +2,8 @@
 
 namespace ConnectProf\App\Model\Ebay;
 
-use ConnectProf\App\Model\Ebay\Features\Helper;
 use ConnectProf\App\Model\Ebay\Features\Product;
+use ConnectProf\App\Model\Ebay\Helpers\Helper;
 use ConnectProf\App\Model\Ebay\Http\Request;
 
 class Ebay implements Constants
@@ -67,7 +67,7 @@ class Ebay implements Constants
     {
         $request = new Request();
         $response = $request->send(self::ENDPOINTS['auth']['getAccessToken']['method'], self::ENDPOINTS['auth']['getAccessToken']['uri'], [
-            'single' => false,
+            'single' => true,
             'raw' => true,
             'form_data' => [
                 'grant_type' => $this->information['grantType'],
