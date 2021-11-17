@@ -25,7 +25,9 @@ class Product extends ProductFactory
             'header' => [
                 'Authorization:Bearer ' . $this->information['token'],
                 'Content-Language:' . $this->information['country'],
-                'X-EBAY-C-MARKETPLACE-ID:' . $this->information['marketPlaceId']
+                'X-EBAY-C-MARKETPLACE-ID:' . $this->information['marketPlaceId'],
+                'Content-Type:application/json',
+                'Accept:application/json'
             ]
         ]);
         return $response->getArray();
