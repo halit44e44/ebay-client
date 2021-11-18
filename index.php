@@ -4,15 +4,50 @@ require_once 'vendor/autoload.php';
 $getCode = 'https://auth.sandbox.ebay.com/oauth2/authorize?client_id=Ouzcanzd-connectp-SBX-4fa91919d-0b5baca4&response_type=code&redirect_uri=O_uzcan_zdemir-Ouzcanzd-connec-amsnxgd&scope=https://api.ebay.com/oauth/api_scope/sell.inventory https://api.ebay.com/oauth/api_scope/sell.inventory.readonly&prompt=login';
 
 
-$code = 'v^1.1#i^1#p^3#I^3#f^0#r^1#t^Ul41XzI6NkJGRkRBNzA2ODk2Mjg3NkUxNDlGOEJENDg3MURBNjNfMV8xI0VeMTI4NA==';
-$token = 'v^1.1#i^1#p^3#I^3#f^0#r^0#t^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';
-$refreshToken = 'v^1.1#i^1#r^1#I^3#f^0#p^3#t^Ul4xMF8xOjM2NjY3OEJBOThERjc0NjZDODRDNEY5RDc0RTEyNEQwXzFfMSNFXjEyODQ=';
+$code = 'v^1.1#i^1#f^0#r^1#p^3#I^3#t^Ul41Xzk6NERBRDlDNzFDMTQ5RDRGRDQ4NjY5OTAwN0E2OUMxRUJfMV8xI0VeMTI4NA==';
+$token = 'v^1.1#i^1#r^0#I^3#f^0#p^3#t^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';
+$refreshToken = 'v^1.1#i^1#r^1#I^3#f^0#p^3#t^Ul4xMF8xMTozNDg1NjFBMzcyMDMzQ0JCREJGNjUzQkMxRDM0RUU5RV8xXzEjRV4xMjg0';
 
-//$ebay = new \ConnectProf\App\Model\Ebay\Ebay('authorization_code', $code);
+//$ebay = new \ConnectProf\App\Model\Ebay\Ebay('authorization_code', $code, 0);
 //print_r($ebay->getAuthInformation());die;
 
 
 
-$ebay = new \ConnectProf\App\Model\Ebay\Ebay('authorization_code', $code, $token, $refreshToken, '7200');
-//print_r($ebay->product->getAllInventoryItem(0)); die;
-print_r($ebay->product->getInventoryItem(0,179475)); die;
+$ebay = new \ConnectProf\App\Model\Ebay\Ebay('authorization_code', $code, 0, $token, $refreshToken, '7200');
+//print_r($ebay->product->getAllCategories(0)); die;
+//print_r($ebay->product->getCategoryById(0,99)); die;
+//print_r($ebay->product->getAllVariants(0,854));
+
+
+
+$ebay->product->createProductModel(
+    'REPOHALO',
+    'NEW',
+    'Bu alan açıklama içindir',
+    'en_US'
+)->addAvailability(
+    ["unit" => "DAY", "value" => "10"],
+    'Autoooohooo2',
+    '20',
+    '5'
+)->addPackageWeightAndSize(
+    '5',
+    '5',
+    'CENTIMETER',
+    '10',
+    'LETTER',
+    ['unit' => "KILOGRAM", "value" => "2"]
+)->addProduct(
+    'Go Pro',
+    'Go Pro Description',
+    'ean',
+    'epid',
+    'https://www.pixsy.com/wp-content/uploads/2021/04/ben-sweet-2LowviVHZ-E-unsplash-1.jpeg',
+    'isbn',
+    'mpn',
+    'sub title alanı',
+    'Başlık alanı',
+    'upc'
+);
+
+print_r($ebay->product->createProduct());

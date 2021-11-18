@@ -26,7 +26,7 @@ interface Constants
         ],
 
         'product' => [
-            'getAllCategory' => [
+            'getAllCategories' => [ //getCategoryTree - getCategorySubtree or getItemAspectsForCategory
                 'method' => 'GET',
                 'uri' => self::CATEGORY_URL
             ],
