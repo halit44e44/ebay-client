@@ -5,15 +5,16 @@ namespace ConnectProf\App\Model\Ebay;
 interface Constants
 {
     const DEBUG = false;
-    const BASE_URL = "https://api.sandbox.ebay.com/sell/inventory/v1/";
+    const INVENTORY_URL = "https://api.sandbox.ebay.com/sell/inventory/v1/";
     const LOGIN_URL = "https://api.sandbox.ebay.com/identity/v1/oauth2/token";
     const CATEGORY_URL = "https://api.sandbox.ebay.com/commerce/taxonomy/v1/category_tree/";
+    const ACCOUNT_URL = "https://api.sandbox.ebay.com/sell/account/v1/";
 
     const ENDPOINTS = [
-        'auth'=> [
+        'auth' => [
             'getCode' => [
                 'method' => 'GET',
-                'uri'  => 'https://auth.sandbox.ebay.com/oauth2/authorize'
+                'uri' => 'https://auth.sandbox.ebay.com/oauth2/authorize'
             ],
             'getAccessToken' => [
                 'method' => 'POST',
@@ -32,12 +33,32 @@ interface Constants
             ],
             'inventoryItem' => [
                 'method' => 'GET',
-                'uri' => self::BASE_URL . 'inventory_item'
+                'uri' => self::INVENTORY_URL . 'inventory_item'
             ],
             'bulkCreateOrReplaceInventoryItem' => [
                 'method' => 'POST',
-                'uri' => self::BASE_URL . 'bulk_create_or_replace_inventory_item'
+                'uri' => self::INVENTORY_URL . 'bulk_create_or_replace_inventory_item'
+            ],
+            'getAllLocation' => [
+                'method' => 'GET',
+                'uri' => self::INVENTORY_URL . 'location'
+            ]
+        ],
+
+        'account' => [
+            'getPaymentPolicy' => [
+                'method' => 'GET',
+                'uri' => self::ACCOUNT_URL . 'payment_policy',
+            ],
+            'getReturnPolicy' => [
+                'method' => 'GET',
+                'uri' => self::ACCOUNT_URL . 'return_policy',
+            ],
+            'getFulfillmentPolicy' => [
+                'method' => 'GET',
+                'uri' => self::ACCOUNT_URL . 'fulfillment_policy',
             ]
         ]
+
     ];
 }
