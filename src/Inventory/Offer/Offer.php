@@ -20,7 +20,7 @@ class Offer extends OfferFactory
     {
         $response = $this->request->send(Constants::ENDPOINTS['product']['createOffer']['method'], Constants::ENDPOINTS['product']['createOffer']['uri'], [
             'raw' => true,
-            'form_data' => $this->getOfferModel(),
+            'form_data' => $this->getOfferModel()[0],
             'header' => [
                 'Authorization:Bearer ' . $this->information['token'],
                 'Content-Language:' . $this->information['country'],

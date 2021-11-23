@@ -170,7 +170,7 @@ class Request
 //            print_r($this->CURLOPT_POSTFIELDS);
             exit;
         }
-        print_r($this->options); die;
+//        print_r($this->options); die;
         curl_setopt_array($ct, $this->options);
         return new Response($ct);
     }

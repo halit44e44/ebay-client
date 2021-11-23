@@ -12,7 +12,6 @@ class OfferExtra
     {
         $this->offerFactory = $offerFactory;
         $this->product = $product;
-        //print_r($this->offerFactory); die;
     }
 
     public function pricingAndPolicies(
@@ -36,7 +35,6 @@ class OfferExtra
         ];
         $array = array_merge($this->product, $pricingSummary);
         $this->product = $array;
-
         return $this;
     }
 

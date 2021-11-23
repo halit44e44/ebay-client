@@ -21,7 +21,7 @@ $ebay = new \ConnectProf\App\Model\Ebay\Ebay('authorization_code', $code, 0, $to
 //print_r($ebay->account->getReturnPolicy()); die;
 //print_r($ebay->account->getFulfillmentPolicy()); die;
 
-print_r($ebay->offer->createOfferModel(
+$ebay->offer->createOfferModel(
     'ConnectProfTr1',
     'EBAY_US',
     'FIXED_PRICE',
@@ -36,7 +36,7 @@ print_r($ebay->offer->createOfferModel(
     '6193635000',
     'HATATATATA',
     ['currency' => 'USD', 'value' => '272']
-));
+);
 
 print_r($ebay->offer->createOffer()); die;
 
