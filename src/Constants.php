@@ -42,6 +42,10 @@ interface Constants
             'getAllLocation' => [
                 'method' => 'GET',
                 'uri' => self::INVENTORY_URL . 'location'
+            ],
+            'createOffer' => [
+                'method' => 'POST',
+                'uri' => self::INVENTORY_URL . 'offer'
             ]
         ],
 

@@ -12,7 +12,6 @@ $refreshToken = 'v^1.1#i^1#p^3#f^0#I^3#r^1#t^Ul4xMF82OjdFMjQyNTFGMUUyMTZCNDRBQkM
 //print_r($ebay->getAuthInformation());die;
 
 
-
 $ebay = new \ConnectProf\App\Model\Ebay\Ebay('authorization_code', $code, 0, $token, $refreshToken, '7200');
 //print_r($ebay->product->getAllCategories(0)); die;
 //print_r($ebay->product->getCategoryById(0,99)); die;
@@ -21,6 +20,26 @@ $ebay = new \ConnectProf\App\Model\Ebay\Ebay('authorization_code', $code, 0, $to
 //print_r($ebay->account->getPaymentPolicy()); die;
 //print_r($ebay->account->getReturnPolicy()); die;
 //print_r($ebay->account->getFulfillmentPolicy()); die;
+
+print_r($ebay->offer->createOfferModel(
+    'ConnectProfTr1',
+    'EBAY_US',
+    'FIXED_PRICE',
+    75,
+    '30120',
+    'Lumia phone with a stunning 5.7 inch Quad HD display and a powerful octa-core processor.',
+    'halitadres',
+    2,
+    true
+)->pricingAndPolicies(
+    '6193630000',
+    '6193635000',
+    'HATATATATA',
+    ['currency' => 'USD', 'value' => '272']
+));
+
+print_r($ebay->offer->createOffer()); die;
+
 
 //$ebay->product->createProductModel(
 //    'REPOHALO',

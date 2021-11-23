@@ -4,6 +4,7 @@ namespace ConnectProf\App\Model\Ebay;
 
 use ConnectProf\App\Model\Ebay\Account\Policy;
 use ConnectProf\App\Model\Ebay\Inventory\Location\Location;
+use ConnectProf\App\Model\Ebay\Inventory\Offer\Offer;
 use ConnectProf\App\Model\Ebay\Inventory\Product;
 use ConnectProf\App\Model\Ebay\Helpers\Helper;
 use ConnectProf\App\Model\Ebay\Http\Request;
@@ -26,6 +27,7 @@ class Ebay implements Constants
     public $product;
     public $location;
     public $account;
+    public $offer;
 
     /**
      * @param string $grantType
@@ -47,6 +49,7 @@ class Ebay implements Constants
         $this->product = new Product($this->information);
         $this->location = new Location($this->information);
         $this->account = new Policy($this->information);
+        $this->offer = new Offer($this->information);
     }
 
     public function getAuthInformation(): array
