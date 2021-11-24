@@ -166,7 +166,7 @@ class Request
 
         if (Constants::DEBUG) {
 //            print_r($this->getHeader());
-            print_r($this->options);
+//            print_r($this->options);
 //            print_r($this->CURLOPT_POSTFIELDS);
             exit;
         }

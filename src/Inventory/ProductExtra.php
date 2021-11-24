@@ -1,6 +1,6 @@
 <?php
 
-namespace ConnectProf\App\Model\Ebay\Features;
+namespace ConnectProf\App\Model\Ebay\Inventory;
 
 class ProductExtra
 {

@@ -2,7 +2,10 @@
 
 namespace ConnectProf\App\Model\Ebay;
 
-use ConnectProf\App\Model\Ebay\Features\Product;
+use ConnectProf\App\Model\Ebay\Account\Policy;
+use ConnectProf\App\Model\Ebay\Inventory\Location\Location;
+use ConnectProf\App\Model\Ebay\Inventory\Offer\Offer;
+use ConnectProf\App\Model\Ebay\Inventory\Product;
 use ConnectProf\App\Model\Ebay\Helpers\Helper;
 use ConnectProf\App\Model\Ebay\Http\Request;
 
@@ -22,6 +25,9 @@ class Ebay implements Constants
     ];
 
     public $product;
+    public $location;
+    public $account;
+    public $offer;
 
     /**
      * @param string $grantType
@@ -41,6 +47,9 @@ class Ebay implements Constants
         }
 
         $this->product = new Product($this->information);
+        $this->location = new Location($this->information);
+        $this->account = new Policy($this->information);
+        $this->offer = new Offer($this->information);
     }
 
     public function getAuthInformation(): array
@@ -72,13 +81,15 @@ class Ebay implements Constants
             'form_data' => [
                 'grant_type' => $this->information['grantType'],
                 'code' => $this->information['code'],
-                'redirect_uri' => 'O_uzcan_zdemir-Ouzcanzd-connec-amsnxgd'
+                'redirect_uri' => 'Halit_DO_AN-HalitDOA-Connec-wveocptp'
             ],
             'header' => [
                 'Content-Type: application/x-www-form-urlencoded',
-                'Authorization: Basic T3V6Y2FuemQtY29ubmVjdHAtU0JYLTRmYTkxOTE5ZC0wYjViYWNhNDpTQlgtZmE5MTkxOWRjZDJmLWViMTEtNDFhMi1hODY4LTA3YzQ='
+                'Authorization: Basic SGFsaXRET0EtQ29ubmVjdFAtU0JYLTIyY2M5NGJkMi05ZjMyYjk3YzpTQlgtMmNjOTRiZDJiYmRiLWU2MDItNDkzMS05ZmEwLTMyNjE='
             ]
         ]);
+
+//        print_r($response->getObject()); die;
 
         if (empty($response->getObject()->error)) {
             $this->information['loginRequired'] = false;
