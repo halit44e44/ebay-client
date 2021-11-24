@@ -5,7 +5,7 @@ $getCode = 'https://auth.sandbox.ebay.com/oauth2/authorize?client_id=Ouzcanzd-co
 
 
 $code = 'v^1.1#i^1#r^1#I^3#p^3#f^0#t^Ul41XzA6MTQ1MTk1OEVCRUUyNThCREExRERENjRCQkRCRDc5N0FfMF8xI0VeMTI4NA==';
-$token = 'v^1.1#i^1#I^3#r^0#p^3#f^0#t^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';
+$token = 'v^1.1#i^1#I^3#r^0#p^3#f^0#t^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';
 $refreshToken = 'v^1.1#i^1#p^3#f^0#I^3#r^1#t^Ul4xMF82OjdFMjQyNTFGMUUyMTZCNDRBQkM4Mzg1M0VFMTQ1OTVBXzFfMSNFXjEyODQ=';
 
 //$ebay = new \ConnectProf\App\Model\Ebay\Ebay('authorization_code', $code, 0);
@@ -20,25 +20,46 @@ $ebay = new \ConnectProf\App\Model\Ebay\Ebay('authorization_code', $code, 0, $to
 //print_r($ebay->account->getPaymentPolicy()); die;
 //print_r($ebay->account->getReturnPolicy()); die;
 //print_r($ebay->account->getFulfillmentPolicy()); die;
+//print_r($ebay->offer->getOffers('ConnectProfTr')); die;
+print_r($ebay->offer->publishOffer(81868630101)); die;
 
-$ebay->offer->createOfferModel(
-    'ConnectProfTr1',
-    'EBAY_US',
-    'FIXED_PRICE',
-    75,
-    '30120',
-    'Lumia phone with a stunning 5.7 inch Quad HD display and a powerful octa-core processor.',
-    'halitadres',
-    2,
-    true
-)->pricingAndPolicies(
-    '6193630000',
-    '6193635000',
-    'HATATATATA',
-    ['currency' => 'USD', 'value' => '272']
-);
+//$ebay->offer->createOfferModel(
+//    'ConnectProfTr',
+//    'EBAY_US',
+//    'FIXED_PRICE',
+//    75,
+//    '30120',
+//    'Lumia phone with a stunning 5.7 inch Quad HD display and a powerful octa-core processor.',
+//    'halitadres',
+//    2,
+//    true
+//)->pricingAndPolicies(
+//    '6193630000',
+//    '6193635000',
+//    '432432432',
+//    ['currency' => 'USD', 'value' => '272']
+//);
+//
+//print_r($ebay->offer->createOffer()); die;
 
-print_r($ebay->offer->createOffer()); die;
+//$ebay->offer->createOfferModel(
+//    'ConnectProfTr',
+//    'EBAY_US',
+//    'FIXED_PRICE',
+//    75,
+//    '30120',
+//    'Lumia phone with a stunning 5.7 inch Quad HD display and a powerful octa-core processor.',
+//    'halitadres',
+//    2,
+//    true
+//)->pricingAndPolicies(
+//    '6193630000',
+//    '6193635000',
+//    '222222',
+//    ['currency' => 'USD', 'value' => '272']
+//);
+//
+//print_r($ebay->offer->updateOffer(8186865010)); die;
 
 
 //$ebay->product->createProductModel(

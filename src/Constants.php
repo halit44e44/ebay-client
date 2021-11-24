@@ -43,8 +43,16 @@ interface Constants
                 'method' => 'GET',
                 'uri' => self::INVENTORY_URL . 'location'
             ],
-            'createOffer' => [
+            'createOffer' => [ //publishOffer
                 'method' => 'POST',
+                'uri' => self::INVENTORY_URL . 'offer'
+            ],
+            'updateOffer' => [
+                'method' => 'PUT',
+                'uri' => self::INVENTORY_URL . 'offer/'
+            ],
+            'getOffers' => [
+                'method' => 'GET',
                 'uri' => self::INVENTORY_URL . 'offer'
             ]
         ],
